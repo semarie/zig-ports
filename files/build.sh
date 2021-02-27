@@ -37,7 +37,6 @@ llvm_configure() {
 llvm_build() {
 	cd "${LLVMBUILD}"
 	ninja -j${MAKE_JOBS:-1}
-	#ninja -j${MAKE_JOBS:-1} clang
 	ninja -j${MAKE_JOBS:-1} install
 }
 
@@ -51,7 +50,7 @@ zig1_configure() {
 
 	# configure zig stage1
 	cd "${ZIG1BUILD}"
-	env CXXFLAGS="-fno-emulated-tls -fno-ret-protector -mno-retpoline ${CXXFLAGS:-}" \
+	env CXXFLAGS="-fno-ret-protector -mno-retpoline ${CXXFLAGS:-}" \
 		VERBOSE=1 \
 	    cmake -GNinja "${WRKSRC}/zig" \
 		-DCMAKE_BUILD_TYPE=Release \
