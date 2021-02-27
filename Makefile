@@ -24,9 +24,9 @@ WANTLIB =	${COMPILER_LIBCXX} c curses m z
 # C++11
 COMPILER =	base-clang ports-gcc
 
+MODULES =	lang/python
 BUILD_DEPENDS =	devel/cmake \
-		devel/ninja \
-		meta/python3
+		devel/ninja
 
 SEPARATE_BUILD =	Yes
 
@@ -38,6 +38,9 @@ BUILDCMD =	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
 			WRKBUILD="${WRKBUILD}" \
 			MAKE_JOBS="${MAKE_JOBS}" \
 		    sh "${.CURDIR}/files/build.sh"
+
+pre-configure:
+	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
 
 do-build:
 	${BUILDCMD} build
