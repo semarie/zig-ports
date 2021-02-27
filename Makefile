@@ -1,7 +1,6 @@
 # $OpenBSD$
 
-# tested architectures
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	${LLVM_ARCHS}
 
 COMMENT =	zig compiler and toolchain
 
