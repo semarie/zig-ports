@@ -1,6 +1,9 @@
 # $OpenBSD$
 
-COMMENT =	zig compiler
+# tested architectures
+ONLY_FOR_ARCHS =	amd64
+
+COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.8.0pre1038
 
@@ -12,44 +15,39 @@ CATEGORIES =	lang
 
 HOMEPAGE =	https://ziglang.org/
 
-#MAINTAINER =	Sebastien Marie <semarie@online.fr>
+MAINTAINER =	Sebastien Marie <semarie@online.fr>
 
-# MIT (zig) / Apache2 (llvm+clang+lld)
+# MIT: zig / Apache2: llvm+clang+lld
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	${COMPILER_LIBCXX} c curses m z
 
+# C++11
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/cmake \
 		devel/ninja \
 		meta/python3
-#RUN_DEPENDS =		???
-#LIB_DEPENDS =		???
-#TEST_DEPENDS =		???
 
 SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	none
 
-#NO_TEST =		Yes
-
-CMD =	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
-		WRKSRC="${WRKSRC}" \
-		WRKBUILD="${WRKBUILD}" \
-		MAKE_JOBS="${MAKE_JOBS}" \
-	    sh "${.CURDIR}/files/build.sh"
+# command to build/install/test
+BUILDCMD =	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+			WRKSRC="${WRKSRC}" \
+			WRKBUILD="${WRKBUILD}" \
+			MAKE_JOBS="${MAKE_JOBS}" \
+		    sh "${.CURDIR}/files/build.sh"
 
 do-build:
-	${CMD} build
+	${BUILDCMD} build
 
 do-install:
-	${CMD} install
-
-post-install:
-	rm ${PREFIX}/lib/zig/libcxx/include/*.orig
+	${BUILDCMD} install
+	find ${PREFIX}/lib/zig -name '*.orig' -delete
 
 do-test:
-	${CMD} test
+	${BUILDCMD} test
 
 .include <bsd.port.mk>
