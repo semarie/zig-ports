@@ -34,7 +34,7 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	none
 
 # command to build/install/test
-BUILDCMD =	cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} \
+BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
 			WRKSRC="${WRKSRC}" \
 			WRKBUILD="${WRKBUILD}" \
 			MAKE_JOBS="${MAKE_JOBS}" \
