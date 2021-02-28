@@ -28,7 +28,7 @@ llvm_configure() {
 	[ ! -d "${LLVMBUILD}" ] && mkdir "${LLVMBUILD}" "${LLVMINST}"
 
 	cd "${LLVMBUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 \
+	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
 	    cmake -GNinja "${WRKSRC}/llvm" \
 		-DLLVM_ENABLE_PROJECTS="clang;lld" \
 		-DLLVM_ENABLE_LIBXML2=OFF \
@@ -63,7 +63,7 @@ zig1_configure() {
 
 	# configure zig stage1
 	cd "${ZIG1BUILD}"
-	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 \
+	env CXXFLAGS="${CXXFLAGS:-}" VERBOSE=1 MODCMAKE_PORT_BUILD=yes \
 	    cmake -GNinja "${WRKSRC}/zig" \
 		-DCMAKE_BUILD_TYPE=Release \
 		-DCMAKE_C_COMPILER="${CC:-cc}" \
