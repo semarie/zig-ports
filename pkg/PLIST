@@ -1,4 +1,4 @@
-@comment $OpenBSD: PLIST,v$
+@comment $OpenBSD: PLIST,v 1.1.1.1 2021/02/28 15:32:26 semarie Exp $
 @bin bin/zig
 lib/zig/
 lib/zig/include/
