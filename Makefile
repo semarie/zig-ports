@@ -1,6 +1,7 @@
 # $OpenBSD$
 
-ONLY_FOR_ARCHS =	${LLVM_ARCHS}
+# should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
+ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 
 COMMENT =	zig compiler and toolchain
 
