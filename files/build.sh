@@ -49,8 +49,8 @@ llvm_configure() {
 
 llvm_build() {
 	cd "${LLVMBUILD}"
-	ninja -j${MAKE_JOBS:-1}
-	ninja -j${MAKE_JOBS:-1} install
+	ninja -v -j${MAKE_JOBS:-1}
+	ninja -v -j${MAKE_JOBS:-1} install
 }
 
 zig1_configure() {
@@ -96,7 +96,7 @@ zig1_configure() {
 
 zig1_build() {
 	cd "${ZIG1BUILD}"
-	ninja -j${MAKE_JOBS:-1}
+	ninja -v -j${MAKE_JOBS:-1}
 
 	# keep lib-dir next to zig binary
 	# (for building stage2 or running tests)
