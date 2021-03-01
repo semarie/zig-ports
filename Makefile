@@ -3,6 +3,9 @@
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 
+# build llvm as part of the port
+DPB_PROPERTIES =	parallel
+
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.8.0pre1038
