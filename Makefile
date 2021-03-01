@@ -6,6 +6,7 @@ ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.8.0pre1038
+REVISION =	0
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig-bootstrap
@@ -33,11 +34,13 @@ SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	none
 
+MAKE_ENV +=	CXXFLAGS="${CXXFLAGS}" \
+		WRKSRC="${WRKSRC}" \
+		WRKBUILD="${WRKBUILD}" \
+		MAKE_JOBS="${MAKE_JOBS}"
+
 # command to build/install/test
 BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
-			WRKSRC="${WRKSRC}" \
-			WRKBUILD="${WRKBUILD}" \
-			MAKE_JOBS="${MAKE_JOBS}" \
 		    sh "${.CURDIR}/files/build.sh"
 
 pre-configure:
