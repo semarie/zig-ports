@@ -1,4 +1,4 @@
-# $OpenBSD: Makefile,v 1.2 2021/02/28 15:36:55 semarie Exp $
+# $OpenBSD: Makefile,v 1.3 2021/03/01 12:52:45 semarie Exp $
 
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
