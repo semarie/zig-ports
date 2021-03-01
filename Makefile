@@ -38,9 +38,9 @@ SEPARATE_BUILD =	Yes
 CONFIGURE_STYLE =	none
 
 MAKE_ENV +=	CXXFLAGS="${CXXFLAGS}" \
+		MAKE_JOBS="${MAKE_JOBS}" \
 		WRKSRC="${WRKSRC}" \
-		WRKBUILD="${WRKBUILD}" \
-		MAKE_JOBS="${MAKE_JOBS}"
+		WRKBUILD="${WRKBUILD}"
 
 # command to build/install/test
 BUILDCMD =	cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} \
