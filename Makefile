@@ -9,7 +9,7 @@ DPB_PROPERTIES =	parallel
 COMMENT =	zig compiler and toolchain
 
 DISTNAME =	zig-0.8.0pre1038
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig-bootstrap
