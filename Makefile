@@ -3,6 +3,9 @@
 # should be fine for ${LLVM_ARCHS}, but it needs insane amount of datasize
 ONLY_FOR_ARCHS =	amd64 arm64 powerpc64
 
+BROKEN-arm64 =		generated binary segfault
+BROKEN-powerpc64 =	ld: error: undefined symbol: __subkf3 (and others)
+
 # build llvm as part of the port
 DPB_PROPERTIES =	parallel
 
