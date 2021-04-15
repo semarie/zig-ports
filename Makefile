@@ -11,12 +11,11 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	zig compiler and toolchain
 
-DISTNAME =	zig-0.8.0pre1038
-REVISION =	0
+DISTNAME =	zig-0.8.0pre1939
 
 GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig-bootstrap
-GH_COMMIT =	c09fa1535739b965ad525fa71ce441b195cecbe0
+GH_COMMIT =	1f4ebdbb7dcf838b8cf36b89232b42fa679292c4
 
 CATEGORIES =	lang
 
