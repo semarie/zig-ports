@@ -26,7 +26,7 @@ MAINTAINER =	Sebastien Marie <semarie@online.fr>
 # MIT: zig / Apache2: llvm+clang+lld
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} c curses m z
+WANTLIB =	${COMPILER_LIBCXX} c m
 
 # C++11
 COMPILER =	base-clang ports-gcc
