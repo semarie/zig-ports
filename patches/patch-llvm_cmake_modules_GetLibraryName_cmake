@@ -1,4 +1,4 @@
-$OpenBSD$
+$OpenBSD: patch-llvm_cmake_modules_GetLibraryName_cmake,v 1.1 2021/04/24 13:59:21 semarie Exp $
 
 Index: llvm/cmake/modules/GetLibraryName.cmake
 --- llvm/cmake/modules/GetLibraryName.cmake.orig

@@ -1,4 +1,4 @@
-$OpenBSD: patch-lld_ELF_DriverUtils_cpp,v 1.1.1.1 2021/02/28 15:32:17 semarie Exp $
+$OpenBSD: patch-lld_ELF_DriverUtils_cpp,v 1.2 2021/04/24 13:59:21 semarie Exp $
 
 Index: lld/ELF/DriverUtils.cpp
 --- lld/ELF/DriverUtils.cpp.orig

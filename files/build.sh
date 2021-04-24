@@ -1,5 +1,5 @@
 #!/bin/sh
-# $OpenBSD: build.sh,v 1.2 2021/02/28 15:36:55 semarie Exp $
+# $OpenBSD: build.sh,v 1.3 2021/04/24 13:59:21 semarie Exp $
 
 set -eux
 
